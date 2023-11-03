@@ -1,7 +1,7 @@
 
 #include "particles/Particle.hpp"
 
-#include <array>
+//#include <array> non serve, noi usiamo gli array nativi di c non la classe in c++
 #include <cmath>
 #include <cstdlib>
 #include <iostream>

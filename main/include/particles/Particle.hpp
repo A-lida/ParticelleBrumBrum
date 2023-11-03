@@ -1,14 +1,15 @@
 #ifndef PARTICLE_HPP
 #define PARTICLE_HPP
-#include <array>
+//#include <array>
 #include <cmath>
 #include <iostream>
 
 #include "ParticleType.hpp"
 #include "ResonanceType.hpp"
 
-class Particle {
- private:
+class Particle
+{
+private:
   const char *f_Name;
   static const int fMaxNumParticleType = 10;
   static ParticleType *fParticleType[fMaxNumParticleType];
@@ -24,9 +25,9 @@ class Particle {
 
   void Boost(double bx, double by, double bz);
 
- public:
+public:
   Particle();
-  Particle(const char *, double, double, double);
+  Particle(const char *, double{0}, double{0}, double{0});
 
   int get_fIndex();
 
@@ -42,7 +43,7 @@ class Particle {
   double const ParticleEnergy();
   double InvMass(Particle &p);
 
-  void ArrayStatus();  // può essere statico? non lo so
+  static void ArrayStatus(); // può essere statico? si
   void ParticleStatus();
 
   static void AddParticleType(const char *, const double, const int,

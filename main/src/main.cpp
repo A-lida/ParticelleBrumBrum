@@ -64,32 +64,32 @@ int main(int argc, char** argv) {
       ConversionPoltoCart(p, theta, phi, EventParticles[j]);
 
       if (randomValue < probabilityPionPlus) {
-        EventParticles[j]->set_fIndex(0);
+        EventParticles[j]->set_fIndex("Pion+");
 
       } else if (randomValue < probabilityPionPlus + probabilityPionMinus) {
-        EventParticles[j]->set_fIndex(1);
+        EventParticles[j]->set_fIndex("Pion-");
 
       } else if (randomValue < probabilityPionPlus + probabilityPionMinus +
                                    probabilityKaonPlus) {
-        EventParticles[j]->set_fIndex(2);
+        EventParticles[j]->set_fIndex("Kaon+");
 
       } else if (randomValue < probabilityPionPlus + probabilityPionMinus +
                                    probabilityKaonPlus + probabilityKaonMinus) {
-        EventParticles[j]->set_fIndex(3);
+        EventParticles[j]->set_fIndex("Kaon-");
 
       } else if (randomValue < probabilityPionPlus + probabilityPionMinus +
                                    probabilityKaonPlus + probabilityKaonMinus +
                                    probabilityProtonPlus) {
-        EventParticles[j]->set_fIndex(4);
+        EventParticles[j]->set_fIndex("Proton+");
 
       } else if (randomValue < probabilityPionPlus + probabilityPionMinus +
                                    probabilityKaonPlus + probabilityKaonMinus +
                                    probabilityProtonPlus +
                                    probabilityProtonMinus) {
-        EventParticles[j]->set_fIndex(5);
+        EventParticles[j]->set_fIndex("Proton-");
 
       } else {
-        EventParticles[j]->set_fIndex(6);
+        EventParticles[j]->set_fIndex("Kaon*");
         double x->TRandom::Uniform(1);
         if (x < 0.5) {
           EventParticles[j].Particle::Decay2body(
